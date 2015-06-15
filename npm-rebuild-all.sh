@@ -1,10 +1,12 @@
 #!/bin/bash
 
 for repo in $( ls -d */ ); do
-   echo "------------------- $repo -------------------"
-   cd $repo
-   npm prune
-   npm rebuild
-   cd ..
+   if [ $( ls $repo | grep ^package.json$ ) ]; then
+       echo "------------------- $repo -------------------"
+       cd $repo
+       npm prune
+       npm rebuild
+       cd ..
+    fi
 done
 
