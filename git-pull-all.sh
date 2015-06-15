@@ -1,9 +1,11 @@
 #!/bin/bash
 
 for repo in $( ls -d */ ); do
-   echo "------------------- $repo -------------------"
-   cd $repo
-   git pull
-   cd ..
+   if [ $( ls -a $repo | grep ^.git$ ) ]; then
+       echo "------------------- $repo -------------------"
+       cd $repo
+       git pull
+       cd ..
+    fi
 done
 
