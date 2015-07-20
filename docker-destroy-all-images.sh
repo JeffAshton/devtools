@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 for id in $( docker images -a -q ); do 
 	echo "Removing $id"

@@ -2,11 +2,11 @@
 set -e
 
 for repo in $( ls -d */ ); do
-   if [ $( ls $repo | grep ^package.json$ ) ]; then
+    if [ $( ls $repo | grep ^package.json$ ) ]; then
        echo "------------------- $repo -------------------"
        cd $repo
-       npm prune
-       npm rebuild
+       npm dedupe
+       npm shrinkwrap
        cd ..
     fi
 done
