@@ -7,6 +7,7 @@ for repo in $( ls -d */ ); do
        cd $repo
        npm prune
        npm update --save
+       npm update --save-dev
        cd ..
     fi
 done
