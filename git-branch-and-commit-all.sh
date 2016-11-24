@@ -4,7 +4,7 @@ set -e
 branchName="$1"
 commitMessage="$2"
 if [[ -z "$branchName" ]] || [[ -z "$commitMessage" ]]; then
-	echo "Usage: git-branch-commit-and-push-all.sh <<branchName>> <<commitMessage>>"
+	echo "Usage: git-branch-and-commit-all.sh <<branchName>> <<commitMessage>>"
 	exit 1
 fi
 
