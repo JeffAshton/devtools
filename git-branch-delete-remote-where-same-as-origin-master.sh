@@ -14,7 +14,7 @@ for repo in $( ls -d */ ); do
 		if [[ "$( git symbolic-ref --short HEAD )" == "$branchName" ]]; then
 
 			git pull
-			git merge origin/master --no-ff
+			git merge origin/master --no-edit
 
 			set +e
 			git diff --quiet --exit-code "$branchName" "origin/master"
