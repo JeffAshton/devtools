@@ -3,6 +3,6 @@ set -eu
 
 credentailsDir=~/.aws
 
-docker run -it --rm \
+docker run --rm \
 	--volume "$credentailsDir:/root/.aws" \
 	jeffashton/terraforming $@
