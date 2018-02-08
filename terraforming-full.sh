@@ -55,7 +55,7 @@ for resource in ${resources[@]}; do
 
 	set +e
 
-	docker run -it --rm \
+	docker run --rm \
 		--volume "$credentailsDir:/root/.aws" \
 		jeffashton/terraforming $resource \
 		> "$resource.txt"
