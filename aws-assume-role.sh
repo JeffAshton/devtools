@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -u
 
 temp_role=$(aws sts assume-role --role-arn $1 --role-session-name "$HOSTNAME")
 export AWS_ACCESS_KEY_ID=$(echo $temp_role | jq .Credentials.AccessKeyId | xargs)
